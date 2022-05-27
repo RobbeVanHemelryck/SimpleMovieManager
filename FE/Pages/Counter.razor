@@ -1,0 +1,19 @@
+﻿@page "/counter"
+@inject Greeter.GreeterClient GreeterClient 
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @message</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    string message;
+    private async Task IncrementCount()
+    {
+        message = (await GreeterClient.SayHelloAsync(new HelloRequest())).Message;
+    }
+
+}
