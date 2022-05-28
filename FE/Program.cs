@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using FE;
+using Greet;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 

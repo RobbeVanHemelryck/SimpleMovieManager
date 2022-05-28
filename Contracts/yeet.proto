@@ -1,19 +1,19 @@
 syntax = "proto3";
 option csharp_namespace = "FE";
-package greet;
+package yeet;
 
 // The greeting service definition.
-service Greeter {
+service Yeeter {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc SayYeet (YeetRequest) returns (YeetReply);
 }
 
 // The request message containing the user's name.
-message HelloRequest {
+message YeetRequest {
   string name = 1;
 }
 
 // The response message containing the greetings.
-message HelloReply {
+message YeetReply {
   string message = 1;
 }

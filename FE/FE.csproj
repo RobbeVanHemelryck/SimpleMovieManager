@@ -19,8 +19,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <SupportedPlatform Include="browser" />
-        <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+        <Protobuf Include="..\BE\Protos\greet.proto" GrpcServices="Client">
+            <Link>Protos\greet.proto</Link>
+        </Protobuf>
     </ItemGroup>
     
 </Project>

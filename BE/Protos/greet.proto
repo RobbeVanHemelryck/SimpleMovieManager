@@ -1,5 +1,4 @@
 syntax = "proto3";
-option csharp_namespace = "BE";
 package greet;
 
 // The greeting service definition.
