@@ -1,0 +1,19 @@
+syntax = "proto3";
+package movies;
+
+service Movies {
+  rpc Search (SearchRequest) returns (SearchReply);
+}
+
+message SearchRequest {
+  string query = 1;
+}
+
+message SearchReply {
+  repeated Movie movies = 1;
+}
+
+message Movie {
+  string name = 1;
+  int32 year = 2;
+}

@@ -1,6 +1,6 @@
 ﻿@page "/counter"
-@using Greet
-@inject Greeter.GreeterClient GreeterClient 
+@using Movies
+@inject Movies.MoviesClient MoviesClient 
 
 <PageTitle>Counter</PageTitle>
 
@@ -8,13 +8,21 @@
 
 <p role="status">Current count: @message</p>
 
+<input @bind="query" />
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     string message;
+    string query;
     private async Task IncrementCount()
     {
-        message = (await GreeterClient.SayHelloAsync(new HelloRequest())).Message;
+        Console.WriteLine(query);
+        var searchRequest = new SearchRequest
+        {
+            Query = query
+        };
+        var searchResult = await MoviesClient.SearchAsync(searchRequest);
+        Console.WriteLine(searchResult);
     }
 
 }

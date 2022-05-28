@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using FE;
-using Greet;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 
@@ -15,7 +14,7 @@ builder.Services.AddSingleton(services =>
 { 
     var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));
     var channel = GrpcChannel.ForAddress("https://localhost:7031", new GrpcChannelOptions { HttpClient = httpClient }); 
-    return new Greeter.GreeterClient(channel); 
+    return new Movies.Movies.MoviesClient(channel); 
 });
 
 await builder.Build().RunAsync();
